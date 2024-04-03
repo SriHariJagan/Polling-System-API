@@ -81,23 +81,6 @@
 
 ##  Images:
 
-  ![image](https://github.com/SriHariJagan/Polling_API/assets/100404902/650513f9-45ef-4ade-9e2f-702a6a68a490)
-
-
-
-
-
-
-
-  ![image](https://github.com/SriHariJagan/Polling_API/assets/100404902/28b97376-03e1-4aa6-8257-99f49712fd48)
-
-
-
-
-
-
-
-  ![image](https://github.com/SriHariJagan/Polling_API/assets/100404902/61a090b5-94cc-4cd8-8215-f74b2e696c62)
 
 
 
