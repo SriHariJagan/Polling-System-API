@@ -1,0 +1,69 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Changed background color */
+}
+
+.container {
+    width: 100%;
+    margin: 100px auto; /* Adjusted margin */
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    font-size: 2.5rem; /* Increased font size */
+    margin-bottom: 20px; /* Added some space below */
+}
+
+p {
+    color: #666;
+    font-size: 1.1rem; /* Adjusted font size */
+    line-height: 1.6;
+    margin-bottom: 20px; /* Added some space below */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+button {
+    display: block;
+    margin: 10px auto;
+    padding: 12px; /* Increased padding */
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 25px; /* Increased border radius */
+    font-size: 1rem;
+    transition: background-color 0.3s, border-color 0.3s; /* Improved transition */
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px; /* Increased padding */
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px; /* Increased border radius */
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.link:hover {
+    color: #dc3545; /* Changed hover color */
+}

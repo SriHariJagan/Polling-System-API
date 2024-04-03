@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/CSS/home.css">
+    <script src="https://kit.fontawesome.com/40a41ef56d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- User Container -->
+    <div class="container">
+        <!-- User Details -->
+        <% if(locals.user) { %>
+            <div class="user">
+                <span><%= locals.user.name %></span>
+                <a href="/logout" ><button class="logout">Logout</button></a>
+            </div>
+        <% } %>
+
+        <!-- Alert for non-logged in users -->
+        <% if(!locals.user) { %>
+            <span class="alert">
+                To create or like the post, you have to login.
+                <span class="arrow">&#8594;</span><a href="/signinPage">Login</a> 
+            </span> 
+        <% } %>
+
+        <!-- Form for submitting a question -->
+        <form action="/questions/create" method="post" class="userQuestion">
+            <input type="text" name="question" placeholder="Enter the question here" maxlength="100" required>
+            <% if(locals.user) { %>
+                <input type="hidden" name="user" value="<%= locals.user._id %>">
+            <% } %>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <hr>
+
+    <!-- Box for displaying questions -->
+    <div class="box">
+        <% for(let question of questions) { %>
+            <div class="item">
+                <!-- Delete button for the user's own questions -->
+                <% if(locals.user) { %>
+                    <% if(locals.user._id == question.user._id) { %>
+                        <a href="/questions/delete/<%= question._id %>" class="deleteQuestion">
+                            <abbr title="Delete the question..?"> X </abbr>
+                        </a>
+                    <% } %>    
+                <% } %>
+                <br>
+            
+                <span id="question">
+                    <span class="text">
+                        <!-- Display the question text -->
+                        <%= question.question %>
+                    </span>
+                    <!-- Form for adding options if the user is the owner of the question -->
+                    <% if(locals.user) { %>
+                        <% if(locals.user._id == question.user._id) { %>
+                            <form action="/questions/options/create" method="post" class="optionsForm">
+                                <input type="text" name="option" placeholder="Add an option" maxlength="20" required>
+                                <input type="hidden" name="question" value="<%= question._id %>">
+                                <button type="submit">
+                                    <i class="fa-regular fa-paper-plane"></i>
+                                </button>
+                            </form>
+                        <% } %>    
+                    <% } %>
+                </span>
+                
+                <!-- Options for the question -->
+                <div class="options">
+                    <% if(question.options.length > 0) { %>
+                        <% for(let option of question.options) { %>
+                            <li>
+                                <span class="opt">
+                                    <!-- Delete option button for the owner of the question -->
+                                    <% if(locals.user && (locals.user._id == question.user._id)) { %>
+                                        <a href="/questions/options/delete/<%= option._id %>">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </a>  
+                                    <%} %>
+                                    <!-- Display the option text -->
+                                    <span class="optText">
+                                        <%= option.option %>
+                                    </span>
+                                </span>
+                                <!-- Like button for the option -->
+                                <span class="likes">
+                                    <a href="/questions/options/add_vote/<%= option._id %>">
+                                        <button class="likebtn" data-option-id="<%= option._id %>">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                    </a>
+                                    <!-- Display the number of likes for the option -->
+                                    <span class="count">
+                                        <%= option.votes %>
+                                    </span>
+                                </span>
+                            </li>
+                        <% } %>
+                    <% } %>
+                </div>
+            </div>
+        <% } %>
+    </div>    
+
+</body>
+</html>

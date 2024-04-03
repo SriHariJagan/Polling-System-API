@@ -1,0 +1,327 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+    max-width: 800px;
+}
+
+.user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logout{
+    padding: 8px 16px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout:hover{
+    background-color: #c82333;
+}
+
+.user span {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.alert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.arrow {
+    font-size: 1.5rem;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.arrow:hover {
+    color: #dc3545;
+    cursor: pointer;
+}
+
+.alert a{
+    font-size: 1.3rem;
+    color: #c82333;
+    text-decoration: none;
+    transition: color 500ms;
+}
+
+.alert a:hover{
+    text-decoration: underline;
+    color: #28a745;
+}
+
+.userQuestion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.userQuestion input[type="text"] {
+    width: calc(100% - 100px);
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.userQuestion button {
+    width: 100px;
+    height: 40px;
+    margin-top: 10px; /* Add margin to create space between the input and button */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.userQuestion button:hover {
+    background-color: #0056b3;
+}
+
+
+.box {
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /*Center items with equal spacing*/
+}
+
+.item {
+    position: relative;
+    flex: 0 0 calc(33.33% - 120px);
+    margin: 10px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+}
+
+.deleteQuestion abbr {
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+    color: #dc3545;
+}
+
+.deleteQuestion abbr:hover {
+    color: #fdd72a;
+}
+
+.item a {
+    text-decoration: none;
+    color: #333;
+}
+
+#question {
+    display: block;
+    margin: 10px 0 0 10px; /* Adjust as needed */
+}
+
+
+#question::before {
+    position: absolute;
+    left: 10px;
+    background-image: url('https://cdn.pixabay.com/animation/2023/01/07/11/02/11-02-30-972_512.gif');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 18px;
+    height: 25px;
+    content: "";
+}
+
+.text {
+    font-size: 1.2rem;
+    color: #333; /* Adjust color as needed */
+    font-weight: bold;
+    margin-left: 3px;
+}
+
+.optionsForm {
+    margin-top: 20px;
+}
+
+.optionsForm input[type="text"] {
+    width: calc(100% - 120px);
+    height: 42px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.optionsForm button {
+    width: 80px;
+    height: 40px;
+    margin-left: 10px;
+    background-color: #28a745;
+    color: ivory;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s,color 0.3s;
+}
+
+.optionsForm button:hover {
+    color: #007bff;
+    background-color: rgb(240, 240, 240);
+}
+
+.options {
+    margin-top: 20px;
+}
+
+.options li {
+    position: relative;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.optText::before{
+    position: relative;
+    top: 12px;
+    background-image: url('https://flyclipart.com/thumb2/arrow-icon-in-flat-style-arrow-symbol-web-design-logo-ui-vector-511219.png');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 18px;
+    height: 25px;
+    margin-right: 8px;
+    content: "";
+   
+}
+
+.opt {
+    margin-left: 18px;
+    color: #007bff;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.opt a {
+    text-decoration: none;
+    color: #dc3545;
+    transition: color 0.3s;
+    position: absolute;
+    left: 0;
+    top: 22px;
+}
+
+.opt a:hover {
+    color: #c82333;
+}
+
+.likes{
+    position: absolute;
+    right: 5px;
+}
+
+.likes button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    transition: color 300ms;
+    color: #fdd72a;
+}
+
+.likes button:hover {
+    color: #dc3545;
+}
+
+.count {
+    margin-left: 5px;
+    color: #333;
+}
+
+.options .opt a {
+    display: flex;
+    align-items: center;
+    color: #dc3545;
+    text-decoration: none;
+}
+
+.options .opt a i {
+    margin-right: 5px;
+}
+
+.options .opt a:hover {
+    color: #c82333;
+    text-decoration: underline;
+}
+
+.likes button i {
+    margin-right: 5px;
+}
+
+/* Media Queries for Responsive Design */
+
+/* For tablets and larger devices */
+@media screen and (min-width: 768px) {
+    .item {
+        flex-basis: calc(50% - 30px); /* Adjusted to fit two items per row */
+    }
+}
+
+@media screen and (min-width: 1020px) {
+    .item {
+        flex-basis: calc(33.33% - 20px); /* Adjusted to fit two items per row */
+    }
+}
+
+/* For phones */
+@media screen and (max-width: 576px) {
+    .item {
+        flex-basis: 100%;
+    }
+}
